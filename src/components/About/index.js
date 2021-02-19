@@ -4,7 +4,7 @@ import coverImage from "../../assets/cover/cover-image.jpg";
 function About() {
   return (
     <section className="my-5">
-      <h1 id="about">Adam Barron</h1>
+      <h1 id="about">About Me</h1>
       <img src={coverImage} style={{ width: "100%" }} alt="cover" />
     </section>
   );
