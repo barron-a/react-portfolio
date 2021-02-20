@@ -1,6 +1,17 @@
 import React from 'react';
 
 function Nav() {
+    const navItems = [
+        { name: "about", description: "About me section" },
+        { name: "portfolio", description: "examples of other coding projects" },
+        { name: "contact", description: "Adam's contact information" },
+        { name: "resume", description: "Adam's resume"}
+    ];
+
+    function navItemSelected(name) {
+        console.log(`${name} clicked`);
+    }
+
     return (
         <header>
             <h2>
@@ -10,26 +21,15 @@ function Nav() {
             </h2>
             <nav className="container">
                 <ul className="row">
-                    <li className="col">
-                        <a href="#about">
-                            About Me
-                        </a>
-                    </li>
-                    <li className="col">
-                        <a href="#portfolio">
-                            Portfolio
-                        </a>
-                    </li>
-                    <li className="col">
-                        <a href="#contact">
-                            Contact
-                        </a>
-                    </li>
-                    <li className="col">
-                        <a href="#resume">
-                            Resume
-                        </a>
-                    </li>
+                    {navItems.map((navItem) => (
+                        <li
+                            key={navItem.name}
+                        >
+                            <span onClick={() => navItemSelected(navItem.name)} >
+                                {navItem.name}
+                            </span>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </header>
