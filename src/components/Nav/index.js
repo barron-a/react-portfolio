@@ -1,19 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Nav() {
-    const navItems = [
-        { name: "about", description: "About me section" },
-        { name: "portfolio", description: "examples of other coding projects" },
-        { name: "contact", description: "Adam's contact information" },
-        { name: "resume", description: "Adam's resume"}
-    ];
-
-    function navItemSelected(name) {
-        console.log(`${name} clicked`);
-    }
+function Nav(props) {
+    const {
+        navItems = [],
+        setCurrentNavItem,
+        currentNavItem,
+    } = props
 
     return (
-        <header>
+        <header className="row">
             <h2>
                 <a href="/">
                     <span>Adam Barron</span>
@@ -23,11 +18,16 @@ function Nav() {
                 <ul className="row">
                     {navItems.map((navItem) => (
                         <li
+                            className={`${currentNavItem.name === navItem.name && 'navActive'}`}
                             key={navItem.name}
                         >
-                            <span onClick={() => navItemSelected(navItem.name)} >
-                                {navItem.name}
-                            </span>
+                            <span 
+                                onClick={() => {
+                                setCurrentNavItem(navItem)
+                            }}
+                        >
+                            {navItem.name}
+                        </span>
                         </li>
                     ))}
                 </ul>
