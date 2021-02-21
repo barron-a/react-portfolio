@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useEffect } from 'react';
 
 function Nav(props) {
     const {
@@ -6,6 +6,10 @@ function Nav(props) {
         setCurrentNavItem,
         currentNavItem,
     } = props
+
+    useEffect(() => {
+        document.title = currentNavItem.name;
+    }, [currentNavItem]);
 
     return (
         <header className="row">
