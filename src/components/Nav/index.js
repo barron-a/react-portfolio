@@ -27,7 +27,7 @@ function Nav(props) {
                         >
                             <span 
                                 onClick={() => {
-                                setCurrentNavItem(navItem)
+                                    setCurrentNavItem(navItem)
                                 }}
                             >
                                 {navItem.name}
