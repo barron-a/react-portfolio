@@ -28,10 +28,10 @@ function Nav(props) {
                             <span 
                                 onClick={() => {
                                 setCurrentNavItem(navItem)
-                            }}
-                        >
-                            {navItem.name}
-                        </span>
+                                }}
+                            >
+                                {navItem.name}
+                            </span>
                         </li>
                     ))}
                 </ul>
